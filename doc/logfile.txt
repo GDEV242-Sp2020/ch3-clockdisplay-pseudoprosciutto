@@ -1,0 +1,29 @@
+Class documentation
+<---- javadoc command: ---->
+/private/var/folders/qr/bx0j9s7x5wg5n59vw7jnh5g00000gn/T/AppTranslocation/EC0E8509-E879-4749-B181-8E728FB2DA64/d/BlueJ.app/Contents/JDK/Home/bin/javadoc
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+11
+-classpath
+/private/var/folders/qr/bx0j9s7x5wg5n59vw7jnh5g00000gn/T/AppTranslocation/EC0E8509-E879-4749-B181-8E728FB2DA64/d/BlueJ.app/Contents/Resources/Java/bluejcore.jar:/private/var/folders/qr/bx0j9s7x5wg5n59vw7jnh5g00000gn/T/AppTranslocation/EC0E8509-E879-4749-B181-8E728FB2DA64/d/BlueJ.app/Contents/Resources/Java/junit-4.11.jar:/private/var/folders/qr/bx0j9s7x5wg5n59vw7jnh5g00000gn/T/AppTranslocation/EC0E8509-E879-4749-B181-8E728FB2DA64/d/BlueJ.app/Contents/Resources/Java/hamcrest-core-1.3.jar:/private/var/folders/qr/bx0j9s7x5wg5n59vw7jnh5g00000gn/T/AppTranslocation/EC0E8509-E879-4749-B181-8E728FB2DA64/d/BlueJ.app/Contents/Resources/Java/lang-stride.jar:/private/var/folders/qr/bx0j9s7x5wg5n59vw7jnh5g00000gn/T/AppTranslocation/EC0E8509-E879-4749-B181-8E728FB2DA64/d/BlueJ.app/Contents/Resources/Java/javafx/lib/javafx.base.jar:/private/var/folders/qr/bx0j9s7x5wg5n59vw7jnh5g00000gn/T/AppTranslocation/EC0E8509-E879-4749-B181-8E728FB2DA64/d/BlueJ.app/Contents/Resources/Java/javafx/lib/javafx.controls.jar:/private/var/folders/qr/bx0j9s7x5wg5n59vw7jnh5g00000gn/T/AppTranslocation/EC0E8509-E879-4749-B181-8E728FB2DA64/d/BlueJ.app/Contents/Resources/Java/javafx/lib/javafx.fxml.jar:/private/var/folders/qr/bx0j9s7x5wg5n59vw7jnh5g00000gn/T/AppTranslocation/EC0E8509-E879-4749-B181-8E728FB2DA64/d/BlueJ.app/Contents/Resources/Java/javafx/lib/javafx.graphics.jar:/private/var/folders/qr/bx0j9s7x5wg5n59vw7jnh5g00000gn/T/AppTranslocation/EC0E8509-E879-4749-B181-8E728FB2DA64/d/BlueJ.app/Contents/Resources/Java/javafx/lib/javafx.media.jar:/private/var/folders/qr/bx0j9s7x5wg5n59vw7jnh5g00000gn/T/AppTranslocation/EC0E8509-E879-4749-B181-8E728FB2DA64/d/BlueJ.app/Contents/Resources/Java/javafx/lib/javafx.properties.jar:/private/var/folders/qr/bx0j9s7x5wg5n59vw7jnh5g00000gn/T/AppTranslocation/EC0E8509-E879-4749-B181-8E728FB2DA64/d/BlueJ.app/Contents/Resources/Java/javafx/lib/javafx.swing.jar:/private/var/folders/qr/bx0j9s7x5wg5n59vw7jnh5g00000gn/T/AppTranslocation/EC0E8509-E879-4749-B181-8E728FB2DA64/d/BlueJ.app/Contents/Resources/Java/javafx/lib/javafx.web.jar:/Users/admin/Documents/GitHub/SchoolWork/OOP/ch3-clockdisplay-pseudoprosciutto
+-d
+/Users/admin/Documents/GitHub/SchoolWork/OOP/ch3-clockdisplay-pseudoprosciutto/doc
+-encoding
+UTF-8
+-charset
+UTF-8
+/Users/admin/Documents/GitHub/SchoolWork/OOP/ch3-clockdisplay-pseudoprosciutto/ClockDisplay.java
+<---- end of javadoc command ---->
+Loading source file /Users/admin/Documents/GitHub/SchoolWork/OOP/ch3-clockdisplay-pseudoprosciutto/ClockDisplay.java...
+/Users/admin/Documents/GitHub/SchoolWork/OOP/ch3-clockdisplay-pseudoprosciutto/ClockDisplay.java:93: error: ')' expected
+        minutes.setValue(minute);
+                                ^
+1 error
