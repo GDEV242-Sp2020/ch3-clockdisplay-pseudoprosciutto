@@ -1,5 +1,4 @@
- 
-/**
+ /**
  * Excercise 3.38
  * The ClockDisplay class implements a digital clock display for a
  * European-style 24 hour clock. The clock shows hours and minutes. The 
@@ -44,7 +43,11 @@ public class ClockDisplay
         minutes = new NumberDisplay(60);
         setTime(hour, minute);
     }
-
+    
+    public void get24HourInternalDisplay()
+    {
+        
+    }
     /**
      * This method should get called once every minute - it makes
      * the clock display go one minute forward.
@@ -65,7 +68,7 @@ public class ClockDisplay
         updateDisplay();
     }
     
-    
+    //public boolean morningCheck()
     
     /**
      * Set the time of the display to the specified hour and
