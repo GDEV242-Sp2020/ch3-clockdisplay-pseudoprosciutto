@@ -130,6 +130,6 @@ public class ClockDisplay
 
         internalString = ""+displayHour+ ":" + 
                         minutes.getDisplayValue() +" "+ Meridian();
-           return internalString;
+        return internalString;
     }
 }
