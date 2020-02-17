@@ -53,13 +53,14 @@ public class ClockDisplay
     {
         minutes.increment();
         if(minutes.getValue() == 0) {  // it just rolled over!
+                        hours.increment();
+        if(hours.getValue()<12){
             if(morning){
-            morning = false;
-            hours.increment();
-        }else{
             morning = true;
-            hours.increment();
+            }else{
+            morning = false;
             }
+           }
         }
         updateDisplay();
     }
@@ -121,12 +122,13 @@ public class ClockDisplay
         int hour = hours.getValue();
         hours.setValue(12);
         morning = true;
-        //hours.setValue(0);
-        }else{
+        
+        }else{ 
         morning = true;
         }
         displayString = hours.getDisplayValue() + ":" + 
                         minutes.getDisplayValue()
                         +" " +displayMorning();
+                        //hours.setValue(0);
      }
 }
