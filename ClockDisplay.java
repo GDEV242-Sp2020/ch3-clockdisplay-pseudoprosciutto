@@ -1,11 +1,11 @@
+
  /**
- * Excercise 3.38
- * The ClockDisplay class implements a digital clock display for a
- * European-style 24 hour clock. The clock shows hours and minutes. The 
- * range of the clock is 00:00 (midnight) to 23:59 (one minute before 
- * midnight). 
- * a 12 hour internal representation with AM and PM representations
- * of the clock will change to display a 24 hour style clock.
+ * Excercise 3.39
+ * The ClockDisplay class implements an internal digital clock with a
+ * European-style 24 hour clock.The range of the clock is 
+ * 00:00 (midnight) to 23:59 (one minute before midnight). 
+ * a 12 hour external representation will display with AM and PM changing
+ * from the 24 hour internal clock will display when updating display .
  * 
  * The clock display receives "ticks" (via the timeTick method) every minute
  * and reacts by incrementing the display. This is done in the usual clock
@@ -18,9 +18,12 @@ public class ClockDisplay
 {
     private NumberDisplay hours;
     private NumberDisplay minutes;
-    private String displayString; //simulates the actual display
-    private boolean morning;// flag to show if morning
-    
+    private String displayString;    // simulates the actual display
+    //added fields
+    private String internalString;
+    private boolean isMorning;
+    private int displayHour;
+
     /**
      * Constructor for ClockDisplay objects. This constructor 
      * creates a new clock set at 00:00.
@@ -44,10 +47,21 @@ public class ClockDisplay
         setTime(hour, minute);
     }
     
-    public void get24HourInternalDisplay()
+    /**
+     * displays 24 hour internal Clock Display
+     */
+    public String get24HourInternalDisplay()
     {
-        
+    if(hours.getValue() == 24){
+        internalString = "00:" + 
+                        minutes.getDisplayValue();  
+      }else{
+        internalString = hours.getDisplayValue()+ ":" + 
+                        minutes.getDisplayValue(); 
     }
+    return internalString;
+    }
+    
     /**
      * This method should get called once every minute - it makes
      * the clock display go one minute forward.
@@ -56,38 +70,18 @@ public class ClockDisplay
     {
         minutes.increment();
         if(minutes.getValue() == 0) {  // it just rolled over!
-                        hours.increment();
-        if(hours.getValue()<12){
-            if(morning){
-            morning = true;
-            }else{
-            morning = false;
-            }
-           }
+            hours.increment();
         }
         updateDisplay();
     }
-    
-    //public boolean morningCheck()
-    
+
     /**
      * Set the time of the display to the specified hour and
-     * minute in a 12 hour american standard clock type.
+     * minute.
      */
     public void setTime(int hour, int minute)
     {
-        if(hour == 0){
-            hours.setValue(12);
-            morning = true;
-        } else if(hour == 12){
         hours.setValue(hour);
-        morning = false;
-        }else if(hour >12){
-        hours.setValue(hour-12);
-        morning = false;
-        }else{
-            morning = true;
-        }
         minutes.setValue(minute);
         updateDisplay();
     }
@@ -97,41 +91,39 @@ public class ClockDisplay
      */
     public String getTime()
     {
+        updateDisplay();
         return displayString;
     }
     
     /**
-     * display AM if morning true else display PM
+     * Display AM or PM depending on state of isMorning
      */
-    public String displayMorning()
-    {
-        if(morning){
-            return "AM";
-        }else{
-            return "PM";
-        }
+    private String Meridian(){
+    if(isMorning){
+    return "AM";}
+    return "PM";
+
     }
-    
     /**
      * Update the internal string that represents the display.
      */
     private void updateDisplay()
-    {
-        if(hours.getValue() > 12){
-        int hour = hours.getValue();
-        hours.setValue(hour-12);
-        morning = false;
-        }else if(hours.getValue() == 12){
-        int hour = hours.getValue();
-        hours.setValue(12);
-        morning = true;
-        
-        }else{ 
-        morning = true;
+    {   
+    if(hours.getValue() == 24 || hours.getValue() == 0){ //midnight
+        isMorning = true;
+        displayHour = 12;
+      }else if(hours.getValue()>12 && hours.getValue()<24){ //PM
+        isMorning = false;
+        displayHour = hours.getValue()-12;
+      }else if(hours.getValue() == 12){  //noon 
+        isMorning = false;
+        displayHour = 12;
+      }else{
+        isMorning = true;
+        displayHour = hours.getValue();
         }
-        displayString = hours.getDisplayValue() + ":" + 
-                        minutes.getDisplayValue()
-                        +" " +displayMorning();
-                        //hours.setValue(0);
-     }
+
+        displayString = ""+displayHour+ ":" + 
+                        minutes.getDisplayValue() +" "+ Meridian();
+    }
 }
